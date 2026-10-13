@@ -29,7 +29,11 @@ export const RegistrationForm = () => {
       isSriLankanCitizen: true,
       isDualCitizen: false,
       candidacyType: 'Party',
-      partyAffiliation: { partyName: '', secretarySignatureUrl: '' },
+      partyAffiliation: {
+    partyName: '',
+    partyColor: '#666666',
+    secretarySignatureUrl: ''
+},
       legislativeHistory: { isExMP: false, certificateUrl: '' },
       supportData: {
         proposer: { name: '', voterRegistrationNumber: '' },
@@ -218,10 +222,31 @@ export const RegistrationForm = () => {
             </div>
 
             {candidacyType === 'Party' ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input placeholder="Party Name" {...register("partyAffiliation.partyName")} className="p-2 border rounded bg-white" />
-                <input placeholder="Secretary Signature URL" {...register("partyAffiliation.secretarySignatureUrl")} className="p-2 border rounded bg-white" />
-              </div>
+              
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div>
+        <label className="block text-sm font-medium mb-1">
+            Party Name
+        </label>
+        <input
+            placeholder="Party Name"
+            {...register("partyAffiliation.partyName")}
+            className="p-2 border rounded bg-white w-full"
+        />
+    </div>
+
+    <div>
+        <label className="block text-sm font-medium mb-1">
+            Party Colour
+        </label>
+        <input
+            type="color"
+            {...register("partyAffiliation.partyColor")}
+            className="w-full h-10 border rounded cursor-pointer"
+        />
+    </div>
+</div>
+
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <label className="flex items-center space-x-2">

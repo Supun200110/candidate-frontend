@@ -249,7 +249,7 @@ export default function VerificationDashboard() {
             <div className="bg-[#592c68] text-white p-6 flex justify-between items-start">
               <div>
                 <p className="text-xs uppercase tracking-wider text-purple-200 font-semibold">Official Application</p>
-                <h2 className="text-2xl font-bold mt-0.5">{selected.candidateId} — {selected.fullName}</h2>
+                <h2 className="text-2xl font-bold mt-0.5">{selected.candidateId} - {selected.fullName}</h2>
               </div>
               <button 
                 onClick={() => setSelected(null)} 

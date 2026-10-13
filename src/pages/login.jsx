@@ -27,7 +27,7 @@ export default function AdminLoginPage() {
     .then((response) => {
         setLoading(false);
         
-        // සාර්ථක පණිවිඩය
+        
         toast.success("පිවිසීම සාර්ථකයි! සාදරයෙන් පිළිගනිමු.", {
             duration: 3000,
             
@@ -42,7 +42,7 @@ export default function AdminLoginPage() {
         setLoading(false);
         const errorMsg = error.response?.data?.message || "ඊමේල් ලිපිනය හෝ මුරපදය වැරදියි!";
         
-        // අසාර්ථක පණිවිඩය
+        
         toast.error(errorMsg, {
             style: { border: '1px solid #ff4b4b', padding: '16px', color: '#ff4b4b' }
         });
@@ -52,7 +52,7 @@ export default function AdminLoginPage() {
     return (
         <div className="w-full h-screen flex flex-col md:flex-row bg-[#f8f9fa] overflow-hidden relative">
             
-            {/* වම් පස කොටස - Logo සහ නම */}
+            
             <div className="hidden md:flex md:w-[50%] h-full bg-[#592c68] justify-center items-center flex-col p-8 text-white">
                 <div className="w-full max-w-[300px] mb-6">
                     <img src="\logo1.png" alt="Election Commission" className="w-full h-auto object-contain drop-shadow-2xl" />
@@ -63,14 +63,14 @@ export default function AdminLoginPage() {
                 <p className="mt-4 text-purple-200 justify-center items-center ">Official Admin Portal</p>
             </div>
 
-            {/* දකුණු පස කොටස - Login Form එක */}
+           
             <div className="w-full md:w-[50%] h-full flex items-center justify-center p-4">
                 <div className="w-full max-w-[450px] bg-white shadow-2xl rounded-2xl flex flex-col justify-center items-center py-10 px-8 border border-gray-100">
 
                     <h2 className="text-3xl font-bold text-gray-800 mb-2">Admin Login</h2>
                     <p className="text-gray-500 mb-8 font-medium">Please enter your credentials</p>
 
-                    {/* Email Input */}
+                 
                     <div className="w-full mb-4">
                         <label className="block text-sm font-semibold text-gray-700 mb-1 ml-1">Email</label>
                         <input
@@ -81,7 +81,7 @@ export default function AdminLoginPage() {
                         />
                     </div>
 
-                    {/* Password Input */}
+                  
                     <div className="w-full mb-8">
                         <label className="block text-sm font-semibold text-gray-700 mb-1 ml-1">Password</label>
                         <input
@@ -92,7 +92,7 @@ export default function AdminLoginPage() {
                         />
                     </div>
 
-                    {/* Login Button */}
+                    
                     <button
                         onClick={handleLogin}
                         disabled={loading}
